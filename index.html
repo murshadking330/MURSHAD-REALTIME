@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MURSHAD REALTIME</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .box {
+            background: #1e293b;
+            width: 90%;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+        h1 { color: #38bdf8; }
+        .tag {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #facc15;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>🚀 Live Visitor Source</h1>
+    <div class="tag">Source: <span id="source">Direct</span></div>
+    <div class="tag">Campaign: <span id="campaign">None</span></div>
+    <div class="tag">Medium: <span id="medium">None</span></div>
+
+    <p>Users online right now:</p>
+
+    <!-- Live Visitors Counter -->
+    <script id="_waup41">
+      var _wau = _wau || [];
+      _wau.push(["dynamic", "dkyf4taqk5", "p41", "c4302bffffff", "small"]);
+    </script>
+    <script async src="//waust.at/d.js"></script>
+
+</div>
+
+<script>
+function getUTM(param) {
+    let url = new URL(window.location.href);
+    return url.searchParams.get(param);
+}
+
+let source = getUTM("utm_source") || "Direct";
+let campaign = getUTM("utm_campaign") || "None";
+let medium = getUTM("utm_medium") || "None";
+
+document.getElementById("source").textContent = source;
+document.getElementById("campaign").textContent = campaign;
+document.getElementById("medium").textContent = medium;
+</script>
+
+</body>
+</html>
