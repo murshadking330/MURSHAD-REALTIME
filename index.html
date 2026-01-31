@@ -11,12 +11,17 @@ function getUTM(param) {
 }
 
 let source = getUTM("utm_source");
-let campaign = getUTM("utm_campaign");
 let medium = getUTM("utm_medium");
+let campaign = getUTM("utm_campaign");
 
-if(source){
+// 👇 TITLE یہی widget میں شو ہوگا
+if(source && medium){
+    document.title = source + " / " + medium + " Visitors";
+}
+else if(source){
     document.title = source + " Visitors";
-} else {
+}
+else{
     document.title = "Direct Visitors";
 }
 </script>
@@ -54,8 +59,8 @@ h1 { color: #38bdf8; }
     <h1>🚀 Live Traffic Source</h1>
 
     <div class="tag">Source: <span id="source">Loading...</span></div>
-    <div class="tag">Campaign: <span id="campaign">Loading...</span></div>
     <div class="tag">Medium: <span id="medium">Loading...</span></div>
+    <div class="tag">Campaign: <span id="campaign">Loading...</span></div>
 
     <p>Users online right now:</p>
 
@@ -65,12 +70,13 @@ h1 { color: #38bdf8; }
       _wau.push(["dynamic", "dkyf4taqk5", "p41", "c4302bffffff", "small"]);
     </script>
     <script async src="//waust.at/d.js"></script>
+
 </div>
 
 <script>
 document.getElementById("source").textContent = source || "Direct";
-document.getElementById("campaign").textContent = campaign || "None";
 document.getElementById("medium").textContent = medium || "None";
+document.getElementById("campaign").textContent = campaign || "None";
 </script>
 
 </body>
